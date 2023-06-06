@@ -110,8 +110,19 @@ Almacedos con el metodo HASH describiendo cuando se realizó, donde se realizo y
 git commit -m "description of track or job"
 ```
 
+![commit en terminal](pic-2.png)
+
 - commit en editor de trabajo (siempre y cuando se haya configurado)
-  se abre una pagina en el IDE y se podra comentar el commit
+  se abre una pagina en el IDE y se podra comentar el commit y al cerrar la pagina, automaticamente se guarda los cambios
+
   ```
   git commit (dar enter)
   ```
+
+  ![commit en IDE](pic-3.png)
+
+- conocer los cambios realizados durante el periodo de trabajo
+  ```
+  git log
+  ```
+  ![Log de trabajos realizado](pic-4.png)
