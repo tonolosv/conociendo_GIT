@@ -103,7 +103,7 @@ En una línea de tiempo se toma un fotografía, un registro o cambio en ese arch
 Almacedos con el metodo HASH describiendo cuando se realizó, donde se realizo y quien lo realizo.
 ![description of commit](pic-1.png)
 
-    **SHA**: Secure Hash Algorithms
+   **SHA**: Secure Hash Algorithms
 
 - commit en línea de comando
 
