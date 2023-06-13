@@ -101,9 +101,9 @@ Conocer el estado de un directorio/archivo siempre y cuando hayan sido colocados
 
 En una línea de tiempo se toma un fotografía, un registro o cambio en ese archivo; el cual se podrá rastrear en los registros que se realicen
 Almacedos con el metodo HASH describiendo cuando se realizó, donde se realizo y quien lo realizo.
-![description of commit](pic-1.png)
+![description of commit](pic/pic-1.png)
 
-   **SHA**: Secure Hash Algorithms
+**SHA**: Secure Hash Algorithms
 
 - commit en línea de comando
 
@@ -111,7 +111,7 @@ Almacedos con el metodo HASH describiendo cuando se realizó, donde se realizo y
 git commit -m "description of track or job"
 ```
 
-![commit en terminal](pic-2.png)
+![commit en terminal](pic/pic-2.png)
 
 - commit en editor de trabajo (siempre y cuando se haya configurado)
   se abre una pagina en el IDE y se podra comentar el commit y al cerrar la pagina, automaticamente se guarda los cambios
@@ -120,10 +120,98 @@ git commit -m "description of track or job"
   git commit (dar enter)
   ```
 
-  ![commit en IDE](pic-3.png)
+  ![commit en IDE](pic/pic-3.png)
 
 - conocer los cambios realizados durante el periodo de trabajo
+
   ```
   git log
   ```
-  # ![Log de trabajos realizado](pic-4.png)
+
+  ![Log de trabajos realizado](pic/pic-4.png)
+
+- Asociando el IDE desde comando bash
+
+  ```
+  git config --global core.editor "code --wait"
+  ```
+
+  donde code es para vs code
+
+- Modificando un commit (localmente)
+  Esta operación será por el momento aplicable para el último commit realizado
+
+  ```
+  git commit --amend
+  ```
+
+  Luego de haber realizado el cambio, se guarda la modificación y se cierra el editor.
+
+- Reversión o elimando el último commit
+
+  Esta opción es aplicable en local, lo mas conveniente es hacerlo antes de subirlo al repositorio. Existen dos tipos de reset _soft_ y _hard_, por el momento solo se hace referencia al _soft_
+
+  ```
+  git reset --soft HEAD~1
+  ```
+
+  ![Antes de borrar un commit](pic/pic-5.png)
+  Mostrando el ultimo commit
+
+  ![Despues de borrar un commit](pic/pic-6.png)
+  El commit ultimo ya no existe
+
+#### BRANCH
+
+Branch o ramas, son derivaciones identicas o versiones que provienen desde el main y que son necesarias cuando se requiere realizar un cambio, pero sin afectar lo que se encuentra en producción. Posee todas las caracteristicas necesarias que tiene un _main_, desde hacer un commit hasta que son aplicables al repositorio.
+
+- creando un branch desde main
+
+  ```
+  git branch name_description
+  ```
+
+  ![Creacion de un branch](pic/pic-7.png)
+
+  Conocer en que rama se encuentra solamente es necesario
+
+  ```
+  git branch
+  ```
+
+- Cambiar de branch
+
+  ```
+  git checkout version-javascript
+  ```
+
+  ![desplazamiento de rama](pic/pic-8.png)
+  Considerese que el _\*_ indica en que se rama se encuentra
+
+- Creando un rama en un solo comando
+
+  ```
+  git checkout -b version-python
+  ```
+
+  _-b_ es el indicativo de branch, esta operacion hace que se ubique en la rama recien creada
+
+  ![Creando con un solo comando](pic/pic-9.png)
+
+- cambio de nombre a un branch
+
+  Esto se puede realizar de 2 maneras, la primera consiste en ingresar a la rama y desde alli, realizar el cambion con el siguiente comando
+
+  ```
+  git branch -m version-js
+  ```
+
+  ![cambio de nombre](pic/pic-10.png)
+
+  El segundo metodo en necesario encontrarse en la rama _main_ y ejecutar el comando
+
+  ```
+  git branch -m version-name version-new
+  ```
+
+  ![cambio](pic/pic-11.png)
